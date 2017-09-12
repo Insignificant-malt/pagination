@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>页面分页的制作</title>
+    <link rel="stylesheet" href="css/pagination.css"/>
+    <script src="js/jquery-1.7.1.js"></script>
+    <script src="js/jquery.pagination.js"></script>
+</head>
+<body>
+<div id="div1" class="pager">
+    <span name="first" class="" style="cursor: default;">首页</span>
+    <span name="prev" class="" style="cursor: default;">上一页</span>
+    <span name="nav" style="cursor: pointer;"><a class="navi"><span style="color: #999">1</span></a></span>
+    <span name="next" class="" style="cursor: pointer;">下一页</span>
+    <span name="last" class="" style="cursor: pointer;">末页</span>
+    <input name="goNum" class="cssTxt" type="text" size="1">
+    <span name="go" style="cursor: pointer;">GO</span>
+</div>
+</body>
+<script>
+    $(".pager").pagination({
+        recordCount: 300,       //总记录数
+        pageSize: 10,           //一页记录数
+        onPageChange: function (pageIndex) {
+            console.log(pageIndex);
+        }
+    });
+</script>
+</html>
